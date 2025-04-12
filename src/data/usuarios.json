@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "nombre": "Pepe",
+    "apellido": "Argento",
+    "email": "pepito_argento@hotmail.com",
+    "contraseña": "123321"
+  },
+  {
+    "id": 2,
+    "nombre": "Màximo",
+    "apellido": "Cozzeti",
+    "email": "maximo_cozzeti@hotmail.com",
+    "contraseña": "54321"
+  },
+  {
+    "id": 3,
+    "nombre": "Martin",
+    "apellido": "Palermo",
+    "email": "palermo_martin@hotmail.com",
+    "contraseña": "999999"
+  },
+  {
+    "id": 4,
+    "nombre": "Diego",
+    "apellido": "Lopez",
+    "email": "d.lopez@mail.com",
+    "contraseña": "D2025"
+  },
+  {
+    "id": 5,
+    "nombre": "Sofía",
+    "apellido": "Rodríguez",
+    "email": "sofiar@mail.com",
+    "contraseña": "sofi678"
+  }
+]

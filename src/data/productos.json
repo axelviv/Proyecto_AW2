@@ -1,0 +1,37 @@
+[
+  {
+    "id": 101,
+    "nombre": "Alimento para perro",
+    "desc": "Bolsa de 10kg de alimento premium para perros adultos",
+    "precio": 12000.50,
+    "imagen": "alimento_perro.jpg"
+  },
+  {
+    "id": 102,
+    "nombre": "Collar luminoso",
+    "desc": "Collar LED para paseos nocturnos, ajustable",
+    "precio": 2000.50,
+    "imagen": "collar_led.jpg"
+  },
+  {
+    "id": 103,
+    "nombre": "Pelota interactiva",
+    "desc": "Pelota con sonido para perros medianos",
+    "precio": 1500.00,
+    "imagen": "pelota_perro.jpg"
+  },
+  {
+    "id": 104,
+    "nombre": "Rascador para gatos",
+    "desc": "Estructura de cartón con catnip incluido",
+    "precio": 4500.00,
+    "imagen": "rascador_gato.jpg"
+  },
+  {
+    "id": 105,
+    "nombre": "Shampoo para mascotas",
+    "desc": "Shampoo hipoalergénico para perros y gatos",
+    "precio": 2300.00,
+    "imagen": "shampoo_mascotas.jpg"
+  }
+]
