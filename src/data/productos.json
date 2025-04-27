@@ -3,35 +3,88 @@
     "id": 101,
     "nombre": "Alimento para perro",
     "desc": "Bolsa de 10kg de alimento premium para perros adultos",
-    "precio": 12000.50,
-    "imagen": "alimento_perro.jpg"
+    "precio": 12000.5,
+    "imagen": "alimento_perro.jpg",
+    "stock": true
   },
   {
     "id": 102,
     "nombre": "Collar luminoso",
     "desc": "Collar LED para paseos nocturnos, ajustable",
-    "precio": 2000.50,
-    "imagen": "collar_led.jpg"
+    "precio": 2000.5,
+    "imagen": "collar_led.jpg",
+    "stock": false
   },
   {
     "id": 103,
     "nombre": "Pelota interactiva",
     "desc": "Pelota con sonido para perros medianos",
-    "precio": 1500.00,
-    "imagen": "pelota_perro.jpg"
+    "precio": 1500,
+    "imagen": "pelota_perro.jpg",
+    "stock": true
   },
   {
     "id": 104,
     "nombre": "Rascador para gatos",
     "desc": "Estructura de cartón con catnip incluido",
-    "precio": 4500.00,
-    "imagen": "rascador_gato.jpg"
+    "precio": 4500,
+    "imagen": "rascador_gato.jpg",
+    "stock": true
   },
   {
     "id": 105,
     "nombre": "Shampoo para mascotas",
     "desc": "Shampoo hipoalergénico para perros y gatos",
-    "precio": 2300.00,
-    "imagen": "shampoo_mascotas.jpg"
+    "precio": 2300,
+    "imagen": "shampoo_mascotas.jpg",
+    "stock": true
+  },
+  {
+    "id": 155,
+    "nombre": "Shampoo",
+    "desc": "para perros y gatos",
+    "precio": 9300,
+    "imagen": "smascotas.jpg",
+    "stock": true
+  },
+  {
+    "id": 999,
+    "nombre": "Shampoo",
+    "desc": "para perros y gatos",
+    "precio": 9300,
+    "imagen": "smascotas.jpg",
+    "stock": true
+  },
+  {
+    "id": 110,
+    "nombre": "nuevoProducto",
+    "desc": "para perros y gatos",
+    "precio": 5300,
+    "imagen": "mascotas.jpg",
+    "stock": false
+  },
+  {
+    "id": 2500,
+    "nombre": "nuevoProducto",
+    "desc": "para perros y gatos",
+    "precio": 5300,
+    "imagen": "mascotas.jpg",
+    "stock": false
+  },
+  {
+    "id": 250,
+    "nombre": "nuevoProducto",
+    "desc": "para perros y gatos",
+    "precio": 5300,
+    "imagen": "mascotas.jpg",
+    "stock": false
+  },
+  {
+    "id": 99,
+    "nombre": "nuevoProducto",
+    "desc": "para perros y gatos",
+    "precio": 5300,
+    "imagen": "mascotas.jpg",
+    "stock": false
   }
 ]

@@ -4,7 +4,7 @@
     "id_usuario": 2,
     "fecha": "2025-04-10",
     "total": 1500.00,
-    "dirección": "Calle Falsa 123",
+    "direccion": "Calle Falsa 123",
     "productos": [101, 103]
   },
   {
@@ -12,7 +12,7 @@
     "id_usuario": 5,
     "fecha": "2025-04-08",
     "total": 5250.50,
-    "dirección": "Av. Siempreviva 742",
+    "direccion": "Av. Siempreviva 742",
     "productos": [102, 105]
   },
   {
@@ -20,7 +20,7 @@
     "id_usuario": 3,
     "fecha": "2025-04-06",
     "total": 4000.00,
-    "dirección": "Mitre 456",
+    "direccion": "Mitre 456",
     "productos": [104]
   },
   {
@@ -28,7 +28,7 @@
     "id_usuario": 1,
     "fecha": "2025-04-05",
     "total": 1200.50,
-    "dirección": "Rivadavia 321",
+    "direccion": "Rivadavia 321",
     "productos": [101]
   },
   {
@@ -36,7 +36,7 @@
     "id_usuario": 4,
     "fecha": "2025-04-02",
     "total": 3000.00,
-    "dirección": "San Martín 987",
+    "direccion": "San Martín 987",
     "productos": [103, 105]
   }
 ]
