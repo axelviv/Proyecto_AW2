@@ -86,5 +86,13 @@
     "precio": 5300,
     "imagen": "mascotas.jpg",
     "stock": false
+  },
+  {
+    "id": 767,
+    "nombre": "nuevoP",
+    "desc": "para perro323232s y gatos",
+    "precio": 532330,
+    "imagen": "mascsssotas.jpg",
+    "stock": false
   }
 ]
