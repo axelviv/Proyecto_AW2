@@ -22,7 +22,7 @@ app.listen(port, ()=>{
     console.log(`Servidor iniciado en el puerto ${port}`)
 })
 
-//Definicion de rutas
+//Rutas de ENDPOINT
 app.use('/usuarios', usersRouter)
 app.use('/productos', productsRouter)
 app.use('/ventas', ventasRouter)

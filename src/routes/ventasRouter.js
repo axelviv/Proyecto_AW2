@@ -4,13 +4,13 @@ import { get_user_byId } from '../utils/usersUtil.js'
 
 const router = Router()
 
-//JSONS
-const fileVentas = await readFile('./src/data/ventas.json', 'utf-8')
-const ventas = JSON.parse(fileVentas)
+// //JSONS
+// const fileVentas = await readFile('./src/data/ventas.json', 'utf-8')
+// const ventas = JSON.parse(fileVentas)
 
 
 //POST
-router.post('/detalle', (req, res) => {
+router.post('/detalle', async (req, res) => {
     //Rango del total de ventas que filtra en el body
         const from = Number(req.body.from)
         const to = Number(req.body.to)
@@ -24,6 +24,9 @@ router.post('/detalle', (req, res) => {
         let comprador = ''
         
         try {
+            const fileVentas = await readFile('./src/data/ventas.json', 'utf-8')
+            const ventas = JSON.parse(fileVentas)
+
             const array = ventas.filter(e => e.total >= from && e.total <= to)
             
             const result = array.map(e => {

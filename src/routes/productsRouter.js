@@ -3,15 +3,14 @@ import { readFile, writeFile } from 'fs/promises'
 
 const router = Router()
 
-//JSONS
-const fileProductos = await readFile('./src/data/productos.json', 'utf-8')
-const productos = JSON.parse(fileProductos)
 
 //GET
-router.get('/:productId', (req, res) => {
-    const producto_id = req.params.productId
-    
+router.get('/:productId', async (req, res) => {
+    const producto_id = req.params.productId    
     try {
+        const fileProductos = await readFile('./src/data/productos.json', 'utf-8')
+        const productos = JSON.parse(fileProductos)
+
         const index = productos.findIndex(e => e.id == producto_id)
         if (index !== -1){
             res.status(200).json(productos[index])
@@ -26,7 +25,7 @@ router.get('/:productId', (req, res) => {
 })
 
 //POST
-router.post('/nuevo', (req, res) => {    
+router.post('/nuevo', async (req, res) => {    
     const nuevoProducto = {
         id: req.body.id,
         nombre: req.body.nombre,
@@ -47,9 +46,11 @@ router.post('/nuevo', (req, res) => {
     } */
     
     try {
+        const fileProductos = await readFile('./src/data/productos.json', 'utf-8')
+        const productos = JSON.parse(fileProductos)        
         
         productos.push(nuevoProducto)
-        writeFile('./src/data/productos.json', JSON.stringify(productos, null, 2))
+        await writeFile('./src/data/productos.json', JSON.stringify(productos, null, 2))
         res.status(200).json("Producto agregado!")        
 
     } catch (error) {

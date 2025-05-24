@@ -94,5 +94,21 @@
     "precio": 532330,
     "imagen": "mascsssotas.jpg",
     "stock": false
+  },
+  {
+    "id": 87,
+    "nombre": "nuevoProducto",
+    "desc": "para perros y gatos",
+    "precio": 5300,
+    "imagen": "mascotas.jpg",
+    "stock": false
+  },
+  {
+    "id": 88,
+    "nombre": "nuevoProducto",
+    "desc": "para perros y gatos",
+    "precio": 5300,
+    "imagen": "mascotas.jpg",
+    "stock": false
   }
 ]
