@@ -4,14 +4,14 @@
     "nombre": "Pepe",
     "apellido": "Argento",
     "email": "pepito_argento70@hotmail.com",
-    "contraseña": "123321"
+    "contraseña": "123"
   },
   {
     "id": 2,
-    "nombre": "Màximo",
+    "nombre": "Carlitos",
     "apellido": "Cozzeti",
-    "email": "maximo_cozzeti@hotmail.com",
-    "contraseña": "54321"
+    "email": "asd@asd.com",
+    "contraseña": "asd123"
   },
   {
     "id": 3,

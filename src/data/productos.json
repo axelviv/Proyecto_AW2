@@ -1,114 +1,154 @@
-[
-  {
-    "id": 101,
-    "nombre": "Alimento para perro",
-    "desc": "Bolsa de 10kg de alimento premium para perros adultos",
-    "precio": 12000.5,
-    "imagen": "alimento_perro.jpg",
-    "stock": true
-  },
-  {
-    "id": 102,
-    "nombre": "Collar luminoso",
-    "desc": "Collar LED para paseos nocturnos, ajustable",
-    "precio": 2000.5,
-    "imagen": "collar_led.jpg",
-    "stock": false
-  },
-  {
-    "id": 103,
-    "nombre": "Pelota interactiva",
-    "desc": "Pelota con sonido para perros medianos",
-    "precio": 1500,
-    "imagen": "pelota_perro.jpg",
-    "stock": true
-  },
-  {
-    "id": 104,
-    "nombre": "Rascador para gatos",
-    "desc": "Estructura de cartón con catnip incluido",
-    "precio": 4500,
-    "imagen": "rascador_gato.jpg",
-    "stock": true
-  },
-  {
-    "id": 105,
-    "nombre": "Shampoo para mascotas",
-    "desc": "Shampoo hipoalergénico para perros y gatos",
-    "precio": 2300,
-    "imagen": "shampoo_mascotas.jpg",
-    "stock": true
-  },
-  {
-    "id": 155,
-    "nombre": "Shampoo",
-    "desc": "para perros y gatos",
-    "precio": 9300,
-    "imagen": "smascotas.jpg",
-    "stock": true
-  },
-  {
-    "id": 999,
-    "nombre": "Shampoo",
-    "desc": "para perros y gatos",
-    "precio": 9300,
-    "imagen": "smascotas.jpg",
-    "stock": true
-  },
-  {
-    "id": 110,
-    "nombre": "nuevoProducto",
-    "desc": "para perros y gatos",
-    "precio": 5300,
-    "imagen": "mascotas.jpg",
-    "stock": false
-  },
-  {
-    "id": 2500,
-    "nombre": "nuevoProducto",
-    "desc": "para perros y gatos",
-    "precio": 5300,
-    "imagen": "mascotas.jpg",
-    "stock": false
-  },
-  {
-    "id": 250,
-    "nombre": "nuevoProducto",
-    "desc": "para perros y gatos",
-    "precio": 5300,
-    "imagen": "mascotas.jpg",
-    "stock": false
-  },
-  {
-    "id": 99,
-    "nombre": "nuevoProducto",
-    "desc": "para perros y gatos",
-    "precio": 5300,
-    "imagen": "mascotas.jpg",
-    "stock": false
-  },
-  {
-    "id": 767,
-    "nombre": "nuevoP",
-    "desc": "para perro323232s y gatos",
-    "precio": 532330,
-    "imagen": "mascsssotas.jpg",
-    "stock": false
-  },
-  {
-    "id": 87,
-    "nombre": "nuevoProducto",
-    "desc": "para perros y gatos",
-    "precio": 5300,
-    "imagen": "mascotas.jpg",
-    "stock": false
-  },
-  {
-    "id": 88,
-    "nombre": "nuevoProducto",
-    "desc": "para perros y gatos",
-    "precio": 5300,
-    "imagen": "mascotas.jpg",
-    "stock": false
+{
+  "cardsElementsProductos": {
+    "señaladores": [
+      {
+        "title": "Señalador de Harry Potter",
+        "img": "Assets/señalador-harry.webp",
+        "description": "Sumérgete en el mágico mundo de Harry Potter con estos señaladores de libros magnéticos de la marca Mooving. Cada uno de ellos está diseñado con un colorido y atractivo diseño inspirado en la popular serie de libros y películas. Son el complemento perfecto para cualquier fanático de Harry Potter, añadiendo un toque de magia a tu lectura.",
+        "price": "$9.00"
+      },
+      {
+        "title": "Señalador de Homero",
+        "img": "Assets/homero.webp",
+        "description": "Señalador imantado en ambas caras de Homero Simpson, color Verde.",
+        "price": "$8.99"
+      },
+      {
+        "title": "Señalador Mickey y Minnie",
+        "img": "Assets/señalador-mickey.webp",
+        "description": "Señalador Magnético Mooving Mickey & Minnie X 2 Unidades.",
+        "price": "$6.00"
+      },
+      {
+        "title": "Rey Nocturno Imantado",
+        "img": "Assets/rey-nocturno.webp",
+        "description": "Señalador imantado en ambas caras con gràfico impreso del Rey Nocturno de Juego de Tronos en cartulina opaca 250 gr.",
+        "price": "$9.99"
+      },
+      {
+        "title": "Señalador de Olas",
+        "img": "Assets/olas.webp",
+        "description": "Señalador magnético colorido de olas oceánicas.",
+        "price": "$10.00"
+      },
+      {
+        "title": "Señalador Océano",
+        "img": "Assets/oceano.webp",
+        "description": "Señalador magnético colorido con patrones oceánicos.",
+        "price": "$5.99"
+      },
+      {
+        "title": "Señalador de Messi",
+        "img": "Assets/messi.webp",
+        "description": "Impreso con impresora 3D en material plástico.",
+        "price": "$4.00"
+      },
+      {
+        "title": "Señalador pelota de fútbol",
+        "img": "Assets/ball.webp",
+        "description": "Impreso con impresora 3D en material plástico.",
+        "price": "$2.99"
+      }
+    ],
+    "libros": [
+      {
+        "title": "El señor de los Anillos",
+        "img": "Assets/lotr.webp",
+        "description": "Novela de fantasía épica escrita por el filólogo y escritor británico J. R. R. Tolkien.",
+        "price": "$89.00"
+      },
+      {
+        "title": "Harry Potter",
+        "img": "Assets/hp.webp",
+        "description": "Primer libro de la serie literaria Harry Potter, escrito por la autora británica J. K. Rowling en 1997.",
+        "price": "$55.99"
+      },
+      {
+        "title": "Juego de Tronos",
+        "img": "Assets/got.webp",
+        "description": "Novela de fantasía escrita por el autor estadounidense George R. R. Martin en 1996 y ganadora del premio Locus a la mejor novela de fantasía en 1997.",
+        "price": "$60.00"
+      },
+      {
+        "title": "El Maravilloso Mago de Oz",
+        "img": "Assets/magodeoz.webp",
+        "description": "La novela, que narra las aventuras de una muchacha llamada Dorothy Gale en la tierra de Oz, una de las historias más conocidas de la cultura popular.",
+        "price": "$49.99"
+      },
+      {
+        "title": "Corte de rosas y espinas",
+        "img": "Assets/rosas.webp",
+        "description": "Una joven humana se ve arrastrada hasta una tierra repleta de magia.",
+        "price": "$59.00"
+      },
+      {
+        "title": "Reino de Almas",
+        "img": "Assets/almas.webp",
+        "description": "Magia, dioses, monstruos y maldiciones se unen en esta saga protagonizada por una joven.",
+        "price": "$35.99"
+      },
+      {
+        "title": "Los cantos de Hyperion",
+        "img": "Assets/hyperion.webp",
+        "description": "Ante una posible catástrofe mundial, un grupo de exploradores viajan a Hyperion para salvar a la sociedad.",
+        "price": "$80.00"
+      },
+      {
+        "title": "Geralt de Rivia",
+        "img": "Assets/geralt.webp",
+        "description": "Un brujo se gana la vida como cazador de monstruos en una tierra repleta de seres mágicos.",
+        "price": "$79.99"
+      }
+    ],
+    "fundas": [
+      {
+        "title": "Funda de Lionel Messi",
+        "img": "Assets/funda-messi.webp",
+        "description": "Estampado de Lionel Messi con sublimado en ambos lados y tela tropical.",
+        "price": "$19.00"
+      },
+      {
+        "title": "Funda de Diego Maradona",
+        "img": "Assets/funda_maradona.webp",
+        "description": "Estampado de Diego Maradona con sublimado en ambos lados y tela tropical.",
+        "price": "$18.99"
+      },
+      {
+        "title": "Funda con bolsillo",
+        "img": "Assets/funda1.webp",
+        "description": "Funda de libro personalizada y disponible en tamaño grande con un pequeño bolsillo.",
+        "price": "$12.00"
+      },
+      {
+        "title": "Funda de Mafalda",
+        "img": "Assets/funda_mafalda.webp",
+        "description": "Hechas a mano con telas de calidad en algodón y loneta reciclada roja y bolsillo tela de algodón estampado Mafalda. Acolchada, con bolsillo y cierre imán. Con marcapáginas a juego.",
+        "price": "$19.99"
+      },
+      {
+        "title": "Funda de flores",
+        "img": "Assets/flores.webp",
+        "description": "Estampado de flores y tela tropical.",
+        "price": "$15.00"
+      },
+      {
+        "title": "Funda Maryte",
+        "img": "Assets/maryte.webp",
+        "description": "Totalmente acolchado, esta funda para libros te encantará. Caben hasta 2 libros.",
+        "price": "$28.99"
+      },
+      {
+        "title": "Funda artesanal de Stitch",
+        "img": "Assets/stitch.webp",
+        "description": "Funda literaria artesanal de Stitch en formato saco para proteger libros de tamaño mediano o grande.",
+        "price": "$32.00"
+      },
+      {
+        "title": "Funda Alas de Sangre",
+        "img": "Assets/alas.webp",
+        "description": "Fundas de Alas de Sangre, diseño exclusivo en dos colores.",
+        "price": "$39.99"
+      }
+    ]
   }
-]
+}
