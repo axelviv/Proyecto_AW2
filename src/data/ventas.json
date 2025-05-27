@@ -1,55 +1,111 @@
 [
   {
-    "id": 1,
-    "id_usuario": 2,
-    "fecha": "2025-04-10",
-    "total": 1500,
-    "direccion": "Calle Falsa 123",
     "productos": [
-      101,
-      103
-    ]
-  },
-  {
-    "id": 2,
-    "id_usuario": 5,
-    "fecha": "2025-04-08",
-    "total": 5250.5,
-    "direccion": "Av. Siempreviva 742",
-    "productos": [
-      102,
-      105
-    ]
-  },
-  {
-    "id": 3,
-    "id_usuario": 3,
-    "fecha": "2025-04-06",
-    "total": 4000,
-    "direccion": "Mitre 456",
-    "productos": [
-      104
-    ]
-  },
-  {
-    "id": 4,
+      {
+        "nombre": "Rey Nocturno Imantado",
+        "precio": 9.99,
+        "cantidad": 1
+      },
+      {
+        "nombre": "Señalador de Messi",
+        "precio": 4,
+        "cantidad": 1
+      }
+    ],
+    "total": 13.99,
+    "direccion": "Dirección ficticia",
     "id_usuario": 1,
-    "fecha": "2025-04-05",
-    "total": 1200.5,
-    "direccion": "Rivadavia 321",
-    "productos": [
-      101
-    ]
+    "id": 1748350041395,
+    "fecha": "2025-05-27T12:47:21.395Z"
   },
   {
-    "id": 5,
-    "id_usuario": 4,
-    "fecha": "2025-04-02",
-    "total": 3000,
-    "direccion": "San Martín 987",
     "productos": [
-      103,
-      105
-    ]
+      {
+        "nombre": "El Maravilloso Mago de Oz",
+        "precio": 49.99,
+        "cantidad": 1
+      },
+      {
+        "nombre": "Rey Nocturno Imantado",
+        "precio": 9.99,
+        "cantidad": 1
+      },
+      {
+        "nombre": "Señalador de Homero",
+        "precio": 8.99,
+        "cantidad": 1
+      }
+    ],
+    "total": 68.97,
+    "direccion": "Dirección ficticia",
+    "id_usuario": 1,
+    "id": 1748350100015,
+    "fecha": "2025-05-27T12:48:20.015Z"
+  },
+  {
+    "productos": [
+      {
+        "nombre": "Harry Potter",
+        "precio": 55.99,
+        "cantidad": 1
+      },
+      {
+        "nombre": "Señalador de Homero",
+        "precio": 8.99,
+        "cantidad": 2
+      }
+    ],
+    "total": 73.97,
+    "direccion": "Dirección ficticia",
+    "id_usuario": 1,
+    "id": 1748350120153,
+    "fecha": "2025-05-27T12:48:40.153Z"
+  },
+  {
+    "productos": [
+      {
+        "nombre": "Funda Alas de Sangre",
+        "precio": 39.99,
+        "cantidad": 2
+      }
+    ],
+    "total": 79.98,
+    "direccion": "Dirección ficticia",
+    "id_usuario": 1,
+    "id": 1748350643392,
+    "fecha": "2025-05-27T12:57:23.392Z"
+  },
+  {
+    "productos": [
+      {
+        "nombre": "Señalador de Harry Potter",
+        "precio": 9,
+        "cantidad": 2
+      },
+      {
+        "nombre": "Geralt de Rivia",
+        "precio": 79.99,
+        "cantidad": 3
+      }
+    ],
+    "total": 257.96999999999997,
+    "direccion": "Dirección ficticia",
+    "id_usuario": 1,
+    "id": 1748350691991,
+    "fecha": "2025-05-27T12:58:11.991Z"
+  },
+  {
+    "productos": [
+      {
+        "nombre": "El Maravilloso Mago de Oz",
+        "precio": 49.99,
+        "cantidad": 5
+      }
+    ],
+    "total": 249.95000000000002,
+    "direccion": "Dirección 123",
+    "id_usuario": 1,
+    "id": 1748350908792,
+    "fecha": "2025-05-27T13:01:48.792Z"
   }
 ]

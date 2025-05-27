@@ -10,6 +10,34 @@ const router = Router()
 
 
 //POST
+router.post('/nueva', async (req, res) => {
+    
+    const nuevaVenta = req.body;
+    
+    try {     
+
+        const fileVentas = await readFile('./src/data/ventas.json', 'utf-8');
+        const ventas = JSON.parse(fileVentas);
+
+        //Generar un id y registrar la fecha exacta de la compra
+        nuevaVenta.id = Date.now();
+        nuevaVenta.fecha = new Date().toISOString();
+
+        //Agregar venta al array
+        ventas.push(nuevaVenta);
+
+        //Guardar el array actualizado
+        await writeFile('./src/data/ventas.json', JSON.stringify(ventas, null, 2));
+
+        res.status(201).json({ mensaje: "Venta registrada exitosamente", venta: nuevaVenta });
+
+    } catch (error) {
+        console.error('Error al guardar la venta:', error);
+        res.status(500).json({ error: "Error interno al registrar la venta" });
+    }
+});
+
+
 router.post('/detalle', async (req, res) => {
     //Rango del total de ventas que filtra en el body
     const from = Number(req.body.from)
@@ -52,7 +80,7 @@ router.post('/detalle', async (req, res) => {
 })
 
 
-
+//GET
 router.get('/hola', async (req, res) => {
     try {
 
