@@ -33,5 +33,12 @@
     "apellido": "Rodríguez",
     "email": "sofiar@mail.com",
     "contraseña": "sofi678"
+  },
+  {
+    "nombre": "Clark",
+    "apellido": "Kent",
+    "email": "super@man.com",
+    "id": 6,
+    "contraseña": "$2b$08$k2I5lI7ILSx8NUrW3lNRZ.lT5W9yRSJtKlD.BI0icyHwIQjO3PYUy"
   }
 ]

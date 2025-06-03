@@ -1,5 +1,6 @@
 import { Router } from "express"
 import { readFile, writeFile } from 'fs/promises'
+import bcrypt from 'bcryptjs'
 
 const router = Router()
 
@@ -34,6 +35,60 @@ router.get('/nombre/:userId', async (req, res) => {
         res.status(500).json('Error interno')
     }
 })
+
+//POST
+router.post('/create', async (req, res) => {
+    const { nombre, apellido, email, contraseña } = req.body
+
+    try {
+        const fileUsuarios = await readFile('./src/data/usuarios.json', 'utf-8')
+        const usuarios = JSON.parse(fileUsuarios)
+
+        const usuarioExistente = usuarios.find(u => u.email === email)
+        if (usuarioExistente) {
+            return res.status(409).json({ error: 'El email ya está registrado' })
+        }
+
+        const hashedPass = await bcrypt.hash(contraseña, 8);
+
+        const id = usuarios.length > 0 ? usuarios[usuarios.length - 1].id + 1 : 1
+
+        usuarios.push({ nombre, apellido, email, id, contraseña: hashedPass })
+
+        await writeFile('./src/data/usuarios.json', JSON.stringify(usuarios, null, 2))
+
+        res.status(200).json({ status: true })
+
+    } catch (error) {
+        console.log(error)
+        res.status(400).json({ status: false })
+    }
+})
+
+
+router.post('/login', async (req, res) => {
+    const user_email = req.body.email
+    const pass = req.body.contraseña
+
+    const fileUsuarios = await readFile('./src/data/usuarios.json', 'utf-8')
+    const usuarios = JSON.parse(fileUsuarios)
+
+    const result = usuarios.find(e => e.email === user_email)
+
+    if (!result) {
+        return res.status(404).send({ status: false });
+    }
+
+    const controlPass = bcrypt.compareSync(pass, result.contraseña)
+    console.log(controlPass)
+
+    if (!controlPass) {
+        return res.status(401).send({ status: false })
+    }
+
+    res.status(200).json({userNombre: result.nombre, userApellido: result.apellido})
+})
+
 
 //PUT
 router.put('/email/:userId', async (req, res) => {
@@ -72,7 +127,7 @@ router.delete('/delete/:userId', async (req, res) => {
         const usuarios = JSON.parse(fileUsuarios)
         const fileVentas = await readFile('./src/data/ventas.json', 'utf-8')
         const ventas = JSON.parse(fileVentas)
-        
+
 
         const index = usuarios.findIndex(e => e.id == user_id)
 
