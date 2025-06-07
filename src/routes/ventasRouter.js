@@ -1,6 +1,7 @@
 import { Router } from "express"
 import { readFile, writeFile } from 'fs/promises'
 import { get_user_byId } from '../utils/usersUtil.js'
+import { verifyToken } from "../utils/middleware.js"
 
 const router = Router()
 
@@ -13,6 +14,11 @@ const router = Router()
 router.post('/nueva', async (req, res) => {
     
     const nuevaVenta = req.body;
+    const token = req.headers.authorization?.split(" ")[1];
+
+    if (!await verifyToken(token)) {
+    return res.status(400).json({ status: false });
+  }
     
     try {     
 

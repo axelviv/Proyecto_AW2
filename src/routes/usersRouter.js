@@ -1,9 +1,10 @@
 import { Router } from "express"
 import { readFile, writeFile } from 'fs/promises'
 import bcrypt from 'bcryptjs'
+import jwt from 'jsonwebtoken'
 
 const router = Router()
-
+const SECRET = "6LHYRJWNQ3vQMwx_yry6AGMbuxu_YEbngXLqwcugYImqvKZSd60hjhqkyqGILlXN"
 
 //GET
 router.get('/all', async (req, res) => {
@@ -80,13 +81,19 @@ router.post('/login', async (req, res) => {
     }
 
     const controlPass = bcrypt.compareSync(pass, result.contraseña)
-    console.log(controlPass)
 
     if (!controlPass) {
         return res.status(401).send({ status: false })
     }
 
-    res.status(200).json({userNombre: result.nombre, userApellido: result.apellido})
+    const token = jwt.sign({ ...result }, SECRET, { expiresIn: 3600 })
+
+    res.status(200).json({
+        token,
+        nombre: result.nombre,
+        apellido: result.apellido,
+        id: result.id
+    });
 })
 
 
