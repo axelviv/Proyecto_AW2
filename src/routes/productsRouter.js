@@ -1,5 +1,6 @@
 import { Router } from "express"
 import { readFile, writeFile } from 'fs/promises'
+import { findAll, findById, createProd } from "../db/actions/productosActions.js"
 
 const router = Router()
 
@@ -7,8 +8,7 @@ const router = Router()
 //GET
 router.get('/all', async (req, res) => {
     try {
-        const fileProductos = await readFile('./src/data/productos.json', 'utf-8')
-        const productos = JSON.parse(fileProductos)
+        const productos = await findAll();
 
         res.status(200).json(productos)
     } catch (error) {
@@ -18,51 +18,47 @@ router.get('/all', async (req, res) => {
 
 
 router.get('/:productId', async (req, res) => {
-    const producto_id = req.params.productId
-    try {
-        const fileProductos = await readFile('./src/data/productos.json', 'utf-8')
-        const productos = JSON.parse(fileProductos)
+  const producto_id = req.params.productId;
+  try {
+    const producto = await findById(producto_id);
 
-        const index = productos.findIndex(e => e.id == producto_id)
-        if (index !== -1) {
-            res.status(200).json(productos[index])
-        }
-        else {
-            res.status(400).json('No se encontro el producto solicitado')
-        }
-    } catch (error) {
-        res.status(500).json('Error interno')
+    if (producto) {
+      res.status(200).json(producto); 
+    } else {
+      res.status(404).json('No se encontró el producto solicitado');
     }
-})
+  } catch (error) {
+    console.error('Error al obtener el producto:', error);
+    res.status(500).json('Error interno');
+  }
+});
+
 
 //POST
 router.post('/nuevo', async (req, res) => {
     const nuevoProducto = {
-        id: req.body.id,
-        nombre: req.body.nombre,
-        desc: req.body.desc,
-        precio: req.body.precio,
-        imagen: req.body.imagen,
-        stock: req.body.stock
+        title: req.body.nombre,
+        description: req.body.desc,
+        price: req.body.precio,
+        img: req.body.imagen,
+        Category: req.body.category
     }
 
     //Body de Postman
     /* {
-        "id": 87,
         "nombre": "nuevoProducto",
-        "desc": "para perros y gatos",
-        "precio": 5300,
-        "imagen": "mascotas.jpg",
-        "stock": false
+        "desc": "para leer",
+        "precio": "$ 5300",
+        "imagen": "nuevoLibro.jpg",
+        "category": "libro"
     } */
 
     try {
-        const fileProductos = await readFile('./src/data/productos.json', 'utf-8')
-        const productos = JSON.parse(fileProductos)
-
-        productos.push(nuevoProducto)
-        await writeFile('./src/data/productos.json', JSON.stringify(productos, null, 2))
-        res.status(200).json("Producto agregado!")
+        const productoCreado = await createProd(nuevoProducto);
+        res.status(200).json({
+            mensaje: 'Producto agregado!',
+            producto: productoCreado
+        });
 
     } catch (error) {
         res.status(500).json('Error interno')

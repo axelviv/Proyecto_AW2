@@ -1,6 +1,8 @@
 
 import jwt from 'jsonwebtoken';
-const SECRET = "6LHYRJWNQ3vQMwx_yry6AGMbuxu_YEbngXLqwcugYImqvKZSd60hjhqkyqGILlXN"
+import 'dotenv/config'
+
+const SECRET = process.env.TOKN
 
 export const verifyToken = async (token) => {
 

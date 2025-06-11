@@ -1,82 +1,120 @@
-[
-  {
-    "productos": [
-      {
-        "nombre": "Señalador de Messi",
-        "precio": 4,
-        "cantidad": 1
-      }
-    ],
-    "total": 4,
-    "direccion": "Dirección 123",
-    "id_usuario": "10",
-    "id": 1749275425279,
-    "fecha": "2025-06-07T05:50:25.279Z"
+[{
+  "_id": {
+    "$oid": "6848cac15f00b24f5055b4b3"
   },
-  {
-    "productos": [
-      {
-        "nombre": "Harry Potter",
-        "precio": 55.99,
-        "cantidad": 3
-      },
-      {
-        "nombre": "Rey Nocturno Imantado",
-        "precio": 9.99,
-        "cantidad": 1
+  "id_usuario": "6848c5d5d0df0730b8e3df64",
+  "total": 10,
+  "direccion": "Dirección 123",
+  "productos": [
+    {
+      "nombre": "Señalador Mickey y Minnie",
+      "precio": 6,
+      "cantidad": 1,
+      "_id": {
+        "$oid": "6848cac15f00b24f5055b4b4"
       }
-    ],
-    "total": 177.96,
-    "direccion": "Dirección 123",
-    "id_usuario": "10",
-    "id": 1749275460930,
-    "fecha": "2025-06-07T05:51:00.930Z"
+    },
+    {
+      "nombre": "Señalador de Messi",
+      "precio": 4,
+      "cantidad": 1,
+      "_id": {
+        "$oid": "6848cac15f00b24f5055b4b5"
+      }
+    }
+  ],
+  "fecha": {
+    "$date": "2025-06-11T00:16:01.552Z"
   },
-  {
-    "productos": [
-      {
-        "nombre": "Funda de Diego Maradona",
-        "precio": 18.99,
-        "cantidad": 2
-      },
-      {
-        "nombre": "Funda de Lionel Messi",
-        "precio": 19,
-        "cantidad": 2
-      }
-    ],
-    "total": 75.97999999999999,
-    "direccion": "Dirección 123",
-    "id_usuario": "6",
-    "id": 1749275546973,
-    "fecha": "2025-06-07T05:52:26.973Z"
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6848cb4f5f00b24f5055b4c0"
   },
-  {
-    "productos": [
-      {
-        "nombre": "Los cantos de Hyperion",
-        "precio": 80,
-        "cantidad": 1
+  "id_usuario": "6848cb2c5f00b24f5055b4b9",
+  "total": 326.98,
+  "direccion": "Dirección 123",
+  "productos": [
+    {
+      "nombre": "El señor de los Anillos",
+      "precio": 89,
+      "cantidad": 2,
+      "_id": {
+        "$oid": "6848cb4f5f00b24f5055b4c1"
       }
-    ],
-    "total": 80,
-    "direccion": "Dirección 123",
-    "id_usuario": "11",
-    "id": 1749275868232,
-    "fecha": "2025-06-07T05:57:48.232Z"
+    },
+    {
+      "nombre": "Funda de Lionel Messi",
+      "precio": 19,
+      "cantidad": 3,
+      "_id": {
+        "$oid": "6848cb4f5f00b24f5055b4c2"
+      }
+    },
+    {
+      "nombre": "Reino de Almas",
+      "precio": 35.99,
+      "cantidad": 1,
+      "_id": {
+        "$oid": "6848cb4f5f00b24f5055b4c3"
+      }
+    },
+    {
+      "nombre": "Harry Potter",
+      "precio": 55.99,
+      "cantidad": 1,
+      "_id": {
+        "$oid": "6848cb4f5f00b24f5055b4c4"
+      }
+    }
+  ],
+  "fecha": {
+    "$date": "2025-06-11T00:18:23.504Z"
   },
-  {
-    "productos": [
-      {
-        "nombre": "Rey Nocturno Imantado",
-        "precio": 9.99,
-        "cantidad": 2
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6848cfdc7c268ae24f17ef63"
+  },
+  "id_usuario": "6848c5d5d0df0730b8e3df64",
+  "total": 79.99,
+  "direccion": "Dirección 123",
+  "productos": [
+    {
+      "nombre": "Geralt de Rivia",
+      "precio": 79.99,
+      "cantidad": 1,
+      "_id": {
+        "$oid": "6848cfdc7c268ae24f17ef64"
       }
-    ],
-    "total": 19.98,
-    "direccion": "Dirección 123",
-    "id_usuario": "13",
-    "id": 1749277330588,
-    "fecha": "2025-06-07T06:22:10.588Z"
-  }
-]
+    }
+  ],
+  "fecha": {
+    "$date": "2025-06-11T00:37:48.027Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6848e74e8390b1eb8c486dd5"
+  },
+  "id_usuario": "6848cb2c5f00b24f5055b4b9",
+  "total": 44.95,
+  "direccion": "Dirección 123",
+  "productos": [
+    {
+      "nombre": "Señalador de Homero",
+      "precio": 8.99,
+      "cantidad": 5,
+      "_id": {
+        "$oid": "6848e74e8390b1eb8c486dd6"
+      }
+    }
+  ],
+  "fecha": {
+    "$date": "2025-06-11T02:17:50.010Z"
+  },
+  "__v": 0
+}]

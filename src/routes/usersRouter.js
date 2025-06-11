@@ -2,15 +2,17 @@ import { Router } from "express"
 import { readFile, writeFile } from 'fs/promises'
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
+import 'dotenv/config'
+import { createUser, findUserByEmail, findAll, findById, deleteById, updateMailById } from "../db/actions/usuariosActions.js";
+import { deleteByUserId } from "../db/actions/ventasActions.js";
 
 const router = Router()
-const SECRET = "6LHYRJWNQ3vQMwx_yry6AGMbuxu_YEbngXLqwcugYImqvKZSd60hjhqkyqGILlXN"
+const SECRET = process.env.TOKN
 
 //GET
 router.get('/all', async (req, res) => {
     try {
-        const fileUsuarios = await readFile('./src/data/usuarios.json', 'utf-8')
-        const usuarios = JSON.parse(fileUsuarios)
+        const usuarios = await findAll()
 
         res.status(200).json(usuarios)
     } catch (error) {
@@ -20,46 +22,46 @@ router.get('/all', async (req, res) => {
 
 
 router.get('/nombre/:userId', async (req, res) => {
-    const user_id = req.params.userId
+    const user_id = req.params.userId;
     try {
-        const fileUsuarios = await readFile('./src/data/usuarios.json', 'utf-8')
-        const usuarios = JSON.parse(fileUsuarios)
-
-        const index = usuarios.findIndex(e => e.id == user_id)
-        if (index !== -1) {
-            res.status(200).json(usuarios[index].nombre + ' ' + usuarios[index].apellido)
-        }
-        else {
-            res.status(400).json('No se encontro al usuario')
+        const usuario = await findById(user_id);
+        if (usuario) {            
+            res.status(200).json({ nombreCompleto: usuario.nombre + ' ' + usuario.apellido });
+        } else {
+            res.status(404).json('No se encontró al usuario');
         }
     } catch (error) {
-        res.status(500).json('Error interno')
+        res.status(500).json('Error interno');
     }
-})
+});
+
 
 //POST
 router.post('/create', async (req, res) => {
     const { nombre, apellido, email, contraseña } = req.body
 
     try {
-        const fileUsuarios = await readFile('./src/data/usuarios.json', 'utf-8')
-        const usuarios = JSON.parse(fileUsuarios)
-
-        const usuarioExistente = usuarios.find(u => u.email === email)
-        if (usuarioExistente) {
-            return res.status(409).json({ error: 'El email ya está registrado' })
-        }
-
         const hashedPass = await bcrypt.hash(contraseña, 8);
 
-        const id = usuarios.length > 0 ? usuarios[usuarios.length - 1].id + 1 : 1
+        const result = await createUser({ 
+            nombre, 
+            apellido, 
+            email, 
+            contraseña: hashedPass 
+        });
 
-        usuarios.push({ nombre, apellido, email, id, contraseña: hashedPass })
-
-        await writeFile('./src/data/usuarios.json', JSON.stringify(usuarios, null, 2))
-
-        res.status(200).json({ status: true })
-
+        if (result.status) {
+            res.status(201).json({
+                status: true,
+                message: "Usuario creado exitosamente",
+                user: result.user
+            })
+        } else {
+            res.status(409).json({
+                status: false,
+                message: result.message || "Error al crear usuario"
+            })
+        }
     } catch (error) {
         console.log(error)
         res.status(400).json({ status: false })
@@ -71,10 +73,7 @@ router.post('/login', async (req, res) => {
     const user_email = req.body.email
     const pass = req.body.contraseña
 
-    const fileUsuarios = await readFile('./src/data/usuarios.json', 'utf-8')
-    const usuarios = JSON.parse(fileUsuarios)
-
-    const result = usuarios.find(e => e.email === user_email)
+    const result = await findUserByEmail(user_email);
 
     if (!result) {
         return res.status(404).send({ status: false });
@@ -92,66 +91,57 @@ router.post('/login', async (req, res) => {
         token,
         nombre: result.nombre,
         apellido: result.apellido,
-        id: result.id
+        id: result._id
     });
 })
 
 
 //PUT
 router.put('/email/:userId', async (req, res) => {
-    const user_id = req.params.userId
-    const correo = req.body.email
+  const user_id = req.params.userId;
+  const correo = req.body.email;
 
-    //Body de Postman
-    //  {
-    //     "email": "pepito_argento73@hotmail.com"
-    // } 
+  try {
+   
+    /* Body de Postman
+    {
+        "email": "homero@simpson.com.ar"
+     }
+        */  
 
-    try {
-        const fileUsuarios = await readFile('./src/data/usuarios.json', 'utf-8')
-        const usuarios = JSON.parse(fileUsuarios)
+    const usuarioActualizado = await updateMailById(user_id, correo);
 
-        const index = usuarios.findIndex(e => e.id == user_id)
-        if (index !== -1) {
-            usuarios[index].email = correo
-            await writeFile('./src/data/usuarios.json', JSON.stringify(usuarios, null, 2))
-            res.status(200).json("Email actualizado!")
-        }
-        else {
-            res.status(400).json('no se encontro al usuario')
-        }
-    } catch (error) {
-        res.send(500).json('Error al actualizar el email')
+    if (!usuarioActualizado) {
+      return res.status(404).json('No se encontró al usuario');
     }
-})
 
-//DELETE
+    res.status(200).json({
+      message: 'Email actualizado!',
+      usuario: usuarioActualizado
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json('Error al actualizar el email');
+  }
+});
+
+
+// //DELETE
 router.delete('/delete/:userId', async (req, res) => {
     const user_id = req.params.userId
 
-    try {
-        const fileUsuarios = await readFile('./src/data/usuarios.json', 'utf-8')
-        const usuarios = JSON.parse(fileUsuarios)
-        const fileVentas = await readFile('./src/data/ventas.json', 'utf-8')
-        const ventas = JSON.parse(fileVentas)
+    try {     
+        //Eliminar usuario   
+        const usuario = await deleteById(user_id)
 
-
-        const index = usuarios.findIndex(e => e.id == user_id)
-
-        if (index !== -1) {
-            //Eliminar usuario
-            usuarios.splice(index, 1)
-            await writeFile('./src/data/usuarios.json', JSON.stringify(usuarios, null, 2))
-
-            //Eliminar compras del usuario
-            const ventasAjenasAlUsuario = ventas.filter(e => e.id_usuario != user_id)
-            await writeFile('./src/data/ventas.json', JSON.stringify(ventasAjenasAlUsuario, null, 2))
-
-            res.status(200).json("El usuario y sus compras han sido eliminados!")
+        if (!usuario) {
+            return res.status(404).json('No se encontró al usuario');
         }
-        else {
-            res.status(400).json('no se encontro al usuario')
-        }
+
+        //Eliminar compras
+        await deleteByUserId(user_id)
+
+        res.status(200).json("El usuario y sus compras han sido eliminados!");
     } catch (error) {
         res.send(500).json('Error al eliminar al usuario')
     }

@@ -1,0 +1,20 @@
+[{
+  "_id": {
+    "$oid": "6848c5d5d0df0730b8e3df64"
+  },
+  "nombre": "Clark",
+  "apellido": "Kent",
+  "email": "super@man.com",
+  "contraseña": "$2b$08$29ObaHjWG7nQ6eC.pMsNKuDUTvKurG7bGoNCIBELo4I0KViICTyF.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6848cb2c5f00b24f5055b4b9"
+  },
+  "nombre": "Homero",
+  "apellido": "Simpson",
+  "email": "homero@simpson.com",
+  "contraseña": "$2b$08$cnefjYOWyxYYuIpTdp7AEeEiqWIAW/X/L0/N7lt3YyayLhruF/oxS",
+  "__v": 0
+}]

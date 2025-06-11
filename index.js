@@ -1,16 +1,13 @@
 //Importar
 import express from 'express'
 import cors from 'cors'
-import dotenv from 'dotenv'
+import 'dotenv/config'
 import usersRouter from './src/routes/usersRouter.js'
 import productsRouter from './src/routes/productsRouter.js'
 import ventasRouter from './src/routes/ventasRouter.js'
 
 //Instancia de app
 const app = express()
-
-//Variables de entorno
-dotenv.config()
 
 //Configurar puerto
 const port = process.env.PORT || 3002
