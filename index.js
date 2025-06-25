@@ -5,6 +5,8 @@ import 'dotenv/config'
 import usersRouter from './src/routes/usersRouter.js'
 import productsRouter from './src/routes/productsRouter.js'
 import ventasRouter from './src/routes/ventasRouter.js'
+import fs from 'fs'
+
 
 //Instancia de app
 const app = express()
@@ -14,6 +16,20 @@ const port = process.env.PORT || 3002
 
 //Para que express entienda json
 app.use(express.json())
+
+// Middleware de logging de solicitudes
+app.use((req, res, next) => {
+  const now = new Date().toLocaleString('es-AR', {
+    timeZone: 'America/Argentina/Buenos_Aires',
+  })
+  const log = `${now} | ${req.method} ${req.url}\n`
+  fs.appendFile('logs.txt', log, (err) => {
+    if (err) {
+      console.error('Error al escribir en logs.txt:', err)
+    }
+  })
+  next()
+})
 
 //Iniciar servidor
 app.listen(port, ()=>{
